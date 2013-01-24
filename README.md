@@ -8,7 +8,7 @@ This template can easily be extended into a fully functional J2EE web applicatio
 
 This template uses maven and is tested on Tomcat7 against Postgres 9.2 database. In order to deploy it follow the below steps:
 
-1. Clone this project git clone git@github.com:kamranzafar/spring-jpa-wicket-bootstrap.git
+1. Clone this project git clone git://github.com/kamranzafar/spring-jpa-wicket-bootstrap.git
 2. Create a postgres database
 3. Update pom.xml file and provide database details.
 4. Build the war file with maven
