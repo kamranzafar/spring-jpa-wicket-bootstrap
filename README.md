@@ -6,7 +6,7 @@ This template can easily be extended into a fully functional J2EE web applicatio
 
 ## Usage
 
-This template uses maven and is tested on Tomcat7 against Postgres 9.2 database. In order to deploy it follow the below steps:
+This template uses maven and is tested on Tomcat7 against Postgres 9.1 database. In order to deploy it follow the below steps:
 
 1. Clone this project, __git clone git://github.com/kamranzafar/spring-jpa-wicket-bootstrap.git__
 2. Create a postgres database

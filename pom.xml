@@ -5,6 +5,7 @@
 	<artifactId>openjee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Open J2EE Web Template</name>
+	<packaging>war</packaging>
 	<description>A web template using Spring, JPA, Hibernate, Wicket and Bootstrap. Tested on Tomcat and against Postgres DB. Also demonstrates caching with EHCache</description>
 
 	<build>
@@ -132,7 +133,7 @@
 		<postgres.version>9.1-901.jdbc4</postgres.version>
 
 		<db.username>postgres</db.username>
-		<db.password>password1</db.password>
+		<db.password>Password1</db.password>
 		<db.url>jdbc\:postgresql\://localhost\:5432/hello</db.url>
 	</properties>
 </project>
