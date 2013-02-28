@@ -8,14 +8,14 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>Spring-jpa-wicket-bootstrap by kamranzafar</title>
+    <title>spring-jpa-wicket-bootstrap by kamranzafar</title>
   </head>
 
   <body>
 
     <header>
       <div class="container">
-        <h1>Spring-jpa-wicket-bootstrap</h1>
+        <h1>spring-jpa-wicket-bootstrap</h1>
         <h2>A J2EE web template using Spring, JPA, Hibernate, Wicket and Bootstrap. Tested on Tomcat and against Postgres DB.</h2>
 
         <section id="downloads">
@@ -30,19 +30,21 @@
       <section id="main_content">
         <h1>Open J2EE Web Template</h1>
 
-<p>This is a working template project, which show cases a sample multi-tier J2EE web application with <strong>Apache Wicket</strong>, <strong>Spring IoC</strong> and <strong>JPA/Hibernate</strong> integration and a <strong>Bootstrap</strong> based frontend. It demonstrates <em>MvC</em>, <em>SoC</em>, <em>IoC</em>, <em>DAO</em>, <em>Service layer</em> and <em>Open Session in View</em> patterns and other J2EE best practices.</p>
+<p>This is a working template project, which show cases a sample multi-tier J2EE web application with <strong>Apache Wicket</strong>, <strong>Spring IoC</strong>, <strong>JPA/Hibernate</strong> integration and a <strong>Bootstrap</strong> based frontend. It demonstrates <em>MvC</em>, <em>SoC</em>, <em>IoC</em>, <em>DAO</em>, <em>Service layer</em> and <em>Open Session in View</em> patterns and other J2EE best practices.</p>
 
 <p>This template can easily be extended into a fully functional J2EE web application.</p>
 
 <h2>Usage</h2>
 
-<p>This template uses maven and is tested on Tomcat7 against Postgres 9.2 database. In order to deploy it follow the below steps:</p>
+<p>This template uses maven and is tested on Tomcat7 against Postgres 9.1 database. In order to deploy it follow the below steps:</p>
 
 <ol>
-<li>Clone this project git clone <a href="mailto:git@github.com">git@github.com</a>:kamranzafar/spring-jpa-wicket-bootstrap.git</li>
+<li>Clone this project, <strong>git clone git://github.com/kamranzafar/spring-jpa-wicket-bootstrap.git</strong>
+</li>
 <li>Create a postgres database</li>
 <li>Update pom.xml file and provide database details.</li>
-<li>Build the war file with maven</li>
+<li>Build the war file with maven, <strong>mvn clean compile war:war</strong>
+</li>
 <li>Deploy on Tomcat (this will create a "users" table in the database)</li>
 <li>Run the users.sql script in src/main/script on the postgres database</li>
 </ol><p>After this you can login to the application from the browser using the given username and password.</p>
