@@ -1,19 +1,15 @@
 package org.kamranzafar.samples.openjee;
 
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
-import org.kamranzafar.samples.openjee.BootstrapNavBarPanel.MenuBuilder;
 import org.kamranzafar.samples.openjee.pages.Index;
 import org.kamranzafar.samples.openjee.pages.LogoutView;
 
 public abstract class AuthenticatedPage extends BasePage {
 	public AuthenticatedPage() {
+		menuBuilder.withActiveMenu(getActiveMenu()).withUser(getLoggedInUser())
+				.withMenuItem(MenuItemEnum.INDEX, Index.class).withMenuItem(MenuItemEnum.LOGOUT, LogoutView.class);
 
-		MenuBuilder b = new BootstrapNavBarPanel.MenuBuilder("navBar", Index.class, "Open J2EE Sample",
-				getLoggedInUser(), getActiveMenu()).withMenuItem(MenuItemEnum.INDEX, Index.class);
-
-		b.withMenuItem(MenuItemEnum.LOGOUT, LogoutView.class);
-
-		add(b.build());
+		add(menuBuilder.build());
 	}
 
 	public String getLoggedInUser() {

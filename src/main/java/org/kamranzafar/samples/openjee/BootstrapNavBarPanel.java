@@ -53,18 +53,22 @@ public class BootstrapNavBarPanel extends Panel {
 		private final String id;
 		private final Class<? extends Page> homePage;
 		private final String applicationName;
-		private final String userName;
-		private final MenuItemEnum activeMenuItem;
+		private String userName;
+		private MenuItemEnum activeMenuItem;
 
 		private final Multimap<MenuItemEnum, BookmarkablePageLink<?>> linksMap = LinkedHashMultimap.create();
 
 		public MenuBuilder(String id, Class<? extends Page> homePage, String applicationName, String userName,
 				MenuItemEnum activeMenuItem) {
+			this(id, homePage, applicationName);
+			this.userName = userName;
+			this.activeMenuItem = activeMenuItem;
+		}
+
+		public MenuBuilder(String id, Class<? extends Page> homePage, String applicationName) {
 			this.id = id;
 			this.homePage = homePage;
 			this.applicationName = applicationName;
-			this.userName = userName;
-			this.activeMenuItem = activeMenuItem;
 		}
 
 		public MenuBuilder withMenuItem(MenuItemEnum menuItem, Class<? extends Page> pageToLink) {
@@ -76,6 +80,16 @@ public class BootstrapNavBarPanel extends Panel {
 			BookmarkablePageLink<Page> link = new BookmarkablePageLink<Page>("link", pageToLink);
 			link.setBody(new Model<String>(label));
 			linksMap.put(menuItem, link);
+			return this;
+		}
+
+		public MenuBuilder withUser(String username) {
+			this.userName = username;
+			return this;
+		}
+
+		public MenuBuilder withActiveMenu(MenuItemEnum activeMenu) {
+			this.activeMenuItem = activeMenu;
 			return this;
 		}
 
