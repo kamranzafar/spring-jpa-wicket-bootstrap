@@ -23,7 +23,7 @@ public class LoginPanel extends Panel {
 
 	private boolean includeRememberMe = true;
 
-	private boolean rememberMe = true;
+	private boolean rememberMe = false;
 
 	private String password;
 

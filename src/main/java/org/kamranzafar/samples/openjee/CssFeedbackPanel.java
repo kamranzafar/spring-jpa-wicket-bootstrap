@@ -24,11 +24,15 @@ public class CssFeedbackPanel extends FeedbackPanel {
 	protected Component newMessageDisplayComponent(final String id, final FeedbackMessage message) {
 		final Component newMessageDisplayComponent = super.newMessageDisplayComponent(id, message);
 
+		String cssClass = message.getLevelAsString().toLowerCase();
+
+		cssClass = cssClass.equals("info") ? "success" : cssClass;
+
 		/*
 		 * Bootstrap alert css
 		 */
 		add(new AttributeModifier("style", "display:block"));
-		add(new AttributeModifier("class", "alert alert-" + message.getLevelAsString().toLowerCase()));
+		add(new AttributeModifier("class", "alert alert-" + cssClass));
 
 		return newMessageDisplayComponent;
 	}

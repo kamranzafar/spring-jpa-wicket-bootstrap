@@ -3,7 +3,7 @@ package org.kamranzafar.samples.openjee.pages;
 import java.util.logging.Logger;
 
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
-import org.kamranzafar.samples.openjee.BasePage;
+import org.kamranzafar.samples.openjee.AuthenticatedPage;
 import org.kamranzafar.samples.openjee.MenuItemEnum;
 
 /**
@@ -11,7 +11,7 @@ import org.kamranzafar.samples.openjee.MenuItemEnum;
  * 
  */
 @AuthorizeInstantiation("USER")
-public class Index extends BasePage {
+public class Index extends AuthenticatedPage {
 	private static Logger logger = Logger.getLogger(Index.class.getName());
 
 	public Index() {
