@@ -5,33 +5,18 @@
   <wicket:panel>
       <div class="alert alert-error" wicket:id="feedback" style="display:none;">
       </div>
-		<form wicket:id="loginForm">
-			<table>
-				<tr>
-					<td align="right">Username:</td>
-					<td>
-						<input wicket:id="username" type="text">
-					</td>
-				</tr>
-				<tr>
-					<td align="right">Password:</td>
-					<td>
-						<input wicket:id="password" type="password">
-					</td>
-				</tr>
-				<tr wicket:id="rememberMeRow">
-					<td></td>
-					<td> <input wicket:id="rememberMe" type="checkbox" /> Remember Me </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<input class="btn btn-primary" type="submit" name="submit" value="Sign In">
-						<input class="btn" type="reset" value="Reset">
-					</td>
-				</tr>
-			</table>
-		</form>
+      <form class="form-signin" wicket:id="loginForm">
+        <h3 class="form-signin-heading">Please sign in</h3>
+        <input type="text" wicket:id="username" class="input-block-level" placeholder="Username">
+        <input type="password" wicket:id="password" class="input-block-level" placeholder="Password">
+        <div wicket:id="rememberMeRow">
+	        <label class="checkbox">
+	          <input type="checkbox" wicket:id="rememberMe" value="remember-me"> Remember me
+	        </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+        <button class="btn" type="reset">Reset</button>
+      </form>
   </wicket:panel>
 </body>
 </html>
