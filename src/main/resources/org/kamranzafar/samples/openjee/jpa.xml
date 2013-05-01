@@ -24,7 +24,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
             <property name="showSql" value="true"/>
             <property name="generateDdl" value="true"/>
-            <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="databasePlatform" value="${jpa.hibernate.dialect}"/>
 			</bean>
 		</property>
 	</bean>

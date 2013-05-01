@@ -133,7 +133,10 @@
 		<postgres.version>9.1-901.jdbc4</postgres.version>
 
 		<db.username>postgres</db.username>
-		<db.password>Password1</db.password>
+		<db.password>password1</db.password>
+		<db.driver>org.postgresql.Driver</db.driver>
 		<db.url>jdbc\:postgresql\://localhost\:5432/hello</db.url>
+		
+		<jpa.hibernate.dialect>org.hibernate.dialect.PostgreSQLDialect</jpa.hibernate.dialect>
 	</properties>
 </project>
