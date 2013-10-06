@@ -1,4 +1,4 @@
-# Open J2EE Web Template
+# Open Enterprise Java Web Template
 
 This is a working template project, which show cases a sample multi-tier J2EE web application with __Apache Wicket__, __Spring IoC__, __JPA/Hibernate__ integration and a __Bootstrap__ based frontend. It demonstrates _MvC_, _SoC_, _IoC_, _DAO_, _Service layer_ and _Open Session in View_ patterns and other J2EE best practices.
 
