@@ -16,3 +16,5 @@ This template uses maven and is tested on Tomcat7 against Postgres 9.1 database.
 6. Run the users.sql script in src/main/script on the postgres database
 
 After this you can login to the application from the browser using the given username and password.
+
+[![Build Status](https://travis-ci.org/kamranzafar/spring-jpa-wicket-bootstrap.png?branch=master)](https://travis-ci.org/kamranzafar/spring-jpa-wicket-bootstrap)
