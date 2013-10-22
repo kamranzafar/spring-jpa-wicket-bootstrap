@@ -1,142 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.kamranzafar.samples.openjee</groupId>
-	<artifactId>openjee</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Open J2EE Web Template</name>
-	<packaging>war</packaging>
-	<description>A web template using Spring, JPA, Hibernate, Wicket and Bootstrap. Tested on Tomcat and against Postgres DB. Also demonstrates caching with EHCache</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.kamranzafar.samples.openjee</groupId>
+    <artifactId>openjee</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Open J2EE Web Template</name>
+    <packaging>pom</packaging>
+    <description>A web template using Spring, JPA, Hibernate, Wicket and Bootstrap. Tested on Tomcat and against
+        Postgres DB. Also demonstrates caching with EHCache
+    </description>
 
-	<build>
-		<finalName>openjee</finalName>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<webResources>
-						<resource>
-							<directory>${basedir}/src/main/java</directory>
-							<targetPath>WEB-INF/classes</targetPath>
-							<includes>
-								<include>**/*.properties</include>
-								<include>**/*.xml</include>
-								<include>**/*.css</include>
-								<include>**/*.html</include>
-							</includes>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-core</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-spring</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-datetime</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-auth-roles</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgres.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>11.0.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache-core</artifactId>
-			<version>${ehcache.version}</version>
-		</dependency>
-	</dependencies>
-
-	<properties>
-		<hibernate.version>4.1.1.Final</hibernate.version>
-		<spring.version>3.1.1.RELEASE</spring.version>
-		<ehcache.version>2.6.3</ehcache.version>
-		<wicket.version>6.3.0</wicket.version>
-		<postgres.version>9.1-901.jdbc4</postgres.version>
-
-		<db.username>postgres</db.username>
-		<db.password>password1</db.password>
-		<db.driver>org.postgresql.Driver</db.driver>
-		<db.url>jdbc\:postgresql\://localhost\:5432/hello</db.url>
-		
-		<jpa.hibernate.dialect>org.hibernate.dialect.PostgreSQLDialect</jpa.hibernate.dialect>
-	</properties>
+    <modules>
+        <module>core</module>
+        <module>persistence</module>
+        <module>adaptor</module>
+        <module>web</module>
+    </modules>
 </project>
