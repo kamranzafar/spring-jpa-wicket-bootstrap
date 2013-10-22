@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
-    <defaultCache maxElementsInMemory="100" overflowToDisk="false" eternal="false" timeToLiveSeconds="3600"/>
-    <cache name="hello_cache" maxElementsInMemory="100" eternal="false" overflowToDisk="false" timeToLiveSeconds="3600"/>
-</ehcache>
