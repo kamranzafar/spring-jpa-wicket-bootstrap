@@ -11,7 +11,7 @@ This template uses maven and is tested on Tomcat7 against Postgres 9.1 database.
 1. Clone this project, __git clone git://github.com/kamranzafar/spring-jpa-wicket-bootstrap.git__
 2. Create a postgres database
 3. Update pom.xml file and provide database details.
-4. Build the war file with maven, __mvn clean compile war:war__
+4. Build the war file with maven, __mvn clean install__
 5. Deploy on Tomcat (this will create a "users" table in the database)
 6. Run the users.sql script in src/main/script on the postgres database
 
