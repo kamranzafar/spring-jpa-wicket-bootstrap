@@ -1,12 +1,12 @@
-# Open Enterprise Java Web Template
+# Open Wicket Web Template
 
 This is a working template project, which show cases a sample multi-tier J2EE web application with __Apache Wicket__, __Spring IoC__, __JPA/Hibernate__ integration and a __Bootstrap__ based frontend. It demonstrates _MvC_, _SoC_, _IoC_, _DAO_, _Service layer_ and _Open Session in View_ patterns and other J2EE best practices.
 
-This template can easily be extended into a fully functional J2EE web application.
+This template can easily be extended into a fully functional Wicket based web application.
 
 ## Usage
 
-This template uses maven and is tested on Tomcat7 against Postgres 9.1 database. In order to deploy it follow the below steps:
+This template uses maven and is tested on Tomcat7 against Postgres 9.3 database. In order to deploy it follow the below steps:
 
 1. Clone this project, __git clone git://github.com/kamranzafar/spring-jpa-wicket-bootstrap.git__
 2. Create a postgres database
