@@ -5,3 +5,5 @@
 *.iml
 .classpath
 .project
+
+.deploy
