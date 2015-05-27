@@ -11,10 +11,7 @@ import org.springframework.stereotype.Service;
  * 
  */
 @Service
-public class LoginServiceImpl implements LoginService {
-	@Autowired
-	private DaoManager daoManager;
-
+public class LoginServiceImpl extends BaseServiceImpl implements LoginService {
 	@Override
 	public User authenticate(String username, String password) {
 		return daoManager.getUserDao().getUserByUsernameAndPassword(username, password);

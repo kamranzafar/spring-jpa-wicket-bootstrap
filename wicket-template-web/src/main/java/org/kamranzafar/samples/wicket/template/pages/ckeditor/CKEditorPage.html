@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+    <textarea cols="80" id="editor1" name="editor1" rows="10"></textarea>
+    <script type="text/javascript">
+    //<![CDATA[
+
+        // This call can be placed at any point after the
+        // <textarea>, or inside a <head><script> in a
+        // window.onload event handler.
+
+        // Replace the <textarea id="editor"> with an CKEditor
+        // instance, using default configurations.
+        CKEDITOR.replace( 'editor1' , {
+            "extraPlugins": "imagebrowser",
+            "imageBrowser_listUrl": "/wicket-template-web/ckeditor/images"
+        });
+
+    //]]>
+    </script>
+</wicket:extend>
+</body>
+</html>

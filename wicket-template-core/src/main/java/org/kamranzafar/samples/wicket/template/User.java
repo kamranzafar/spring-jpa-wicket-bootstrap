@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@SequenceGenerator(initialValue = 1, name = "idgen", sequenceName = "user_id_seq")
+@SequenceGenerator(initialValue = 1, allocationSize = 1, name = "idgen", sequenceName = "user_id_seq")
 @Table(name = "users")
 @NamedQuery(name = "UserByUsernameAndPassword", query = "select u from User u where u.username=:uname and u.password=:passwd")
 public class User {

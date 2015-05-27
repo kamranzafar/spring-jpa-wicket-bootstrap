@@ -15,6 +15,8 @@
         <module>wicket-template-persistence</module>
         <module>wicket-template-adaptor</module>
         <module>wicket-template-web</module>
+        <module>wicket-template-rest</module>
+        <module>wicket-template-test</module>
     </modules>
 
     <build>
@@ -32,6 +34,13 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
@@ -121,13 +130,24 @@
             <version>${ehcache.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-restannotations-json</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-springreference</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
         <hibernate.version>4.2.6.Final</hibernate.version>
         <spring.version>3.2.12.RELEASE</spring.version>
         <ehcache.version>2.6.3</ehcache.version>
-        <wicket.version>6.3.0</wicket.version>
+        <wicket.version>6.19.0</wicket.version>
         <postgres.version>9.1-901.jdbc4</postgres.version>
 
         <db.username>postgres</db.username>

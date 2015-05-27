@@ -7,9 +7,13 @@ import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
+import org.apache.wicket.request.resource.IResource;
+import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.kamranzafar.samples.wicket.template.pages.Index;
 import org.kamranzafar.samples.wicket.template.pages.LoginView;
+import org.kamranzafar.samples.wicket.template.rest.ckeditor.CKEditorResource;
+import org.wicketstuff.springreference.SpringReferenceSupporter;
 
 /**
  * @author kamran
@@ -21,6 +25,18 @@ public class Application extends AuthenticatedWebApplication {
 		super.init();
 		getComponentInstantiationListeners().add(new SpringComponentInjector(this));
 		getMarkupSettings().setStripWicketTags(true);
+		SpringReferenceSupporter.register(this);
+
+		mountResource("/ckeditor", new ResourceReference("restReference") {
+			CKEditorResource resource = new CKEditorResource();
+			@Override
+			public IResource getResource() {
+				return resource;
+			}
+
+		});
+
+		mountResource("/image/${id}", new ImageResourceReference());
 	}
 
 	@Override

@@ -54,5 +54,11 @@
             <artifactId>wicket-template-adaptor</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.kamranzafar.samples.wicket</groupId>
+            <artifactId>wicket-template-rest</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
