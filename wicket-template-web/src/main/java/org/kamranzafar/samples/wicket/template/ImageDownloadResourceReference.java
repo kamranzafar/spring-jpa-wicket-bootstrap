@@ -9,9 +9,6 @@ import org.apache.wicket.request.resource.DynamicImageResource;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.util.string.StringValue;
 
-/**
- * A resource reference which serves images by their name.
- */
 public class ImageDownloadResourceReference extends BaseResourceReference {
     public ImageDownloadResourceReference() {
         super(ImageDownloadResourceReference.class, "imageDownload");
@@ -39,8 +36,6 @@ public class ImageDownloadResourceReference extends BaseResourceReference {
             return imageBytes;
         }
 
-        // Needed by ResourceMapper to be able to match the request Url with
-        // the mounted ResourceReference
         @Override
         public boolean equals(Object that) {
             return that instanceof ImageDownloadResource;

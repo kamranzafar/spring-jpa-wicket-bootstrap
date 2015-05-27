@@ -17,6 +17,8 @@ public class Image {
     private String name;
     @Column(name = "data", length = 10000)
     private byte[] data;
+    @Column(name="content_type")
+    private String contentType;
 
     public int getId() {
         return id;
@@ -40,5 +42,13 @@ public class Image {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 }

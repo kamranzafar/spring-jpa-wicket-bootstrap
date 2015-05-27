@@ -4,20 +4,20 @@ package org.kamranzafar.samples.wicket.template;
  * Created by kamran on 27/05/15.
  */
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.wicket.protocol.http.servlet.ServletWebRequest;
 import org.apache.wicket.request.resource.AbstractResource;
 import org.apache.wicket.request.resource.IResource;
-import org.apache.wicket.util.lang.Bytes;
-import org.apache.wicket.util.upload.FileItem;
+import org.apache.wicket.util.io.IOUtils;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Logger;
 
-/**
- * A resource reference which serves images by their name.
- */
+
 public class ImageUploadResourceReference extends BaseResourceReference {
     private static final Logger logger = Logger.getLogger(ImageUploadResourceReference.class.getSimpleName());
 
@@ -44,17 +44,24 @@ public class ImageUploadResourceReference extends BaseResourceReference {
             final StringBuilder responseHtml = new StringBuilder();
 
             try {
-                Map<String, List<FileItem>> files = ((ServletWebRequest) attributes.getRequest())
-                        .newMultipartWebRequest(Bytes.megabytes(100), "ignored").getFiles();
+                List<FileItem> fileItems = new ServletFileUpload(new DiskFileItemFactory())
+                        .parseRequest(((ServletWebRequest) attributes.getRequest()).getContainerRequest());
 
-                for (String key : files.keySet()) {
-                    logger.info("++++++++++++++++++++ " + key + " : " + files.get(key));
+                for (FileItem fi : fileItems) {
+                    if (!fi.isFormField()) {
+                        Image image = new Image();
+                        image.setData(IOUtils.toByteArray(fi.getInputStream()));
+                        image.setName(fi.getName());
+                        image.setContentType(fi.getContentType());
+
+                        deps.serviceFacade.getImageService().saveImage(image);
+                    }
                 }
 
                 responseHtml.append("<b>File uploaded</b>");
             } catch (Throwable t) {
                 t.printStackTrace();
-                responseHtml.append("<b>Error" + t.getMessage() + "</b>");
+                responseHtml.append("<b>Error: " + t.getMessage() + "</b>");
             }
 
             response.setWriteCallback(new WriteCallback() {
