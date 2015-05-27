@@ -135,11 +135,13 @@
             <artifactId>wicketstuff-restannotations-json</artifactId>
             <version>${wicket.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.wicketstuff</groupId>
             <artifactId>wicketstuff-springreference</artifactId>
             <version>${wicket.version}</version>
         </dependency>
+
 
     </dependencies>
 

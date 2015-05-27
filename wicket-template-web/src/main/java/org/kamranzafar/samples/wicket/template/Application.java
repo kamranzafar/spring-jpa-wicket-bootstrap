@@ -36,7 +36,8 @@ public class Application extends AuthenticatedWebApplication {
 
 		});
 
-		mountResource("/image/${id}", new ImageResourceReference());
+		mountResource("/image/${id}", new ImageDownloadResourceReference());
+		mountResource("/image/save", new ImageUploadResourceReference());
 	}
 
 	@Override
